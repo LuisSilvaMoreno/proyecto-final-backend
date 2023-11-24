@@ -1,0 +1,15 @@
+const {Router} = require ('express')
+const{listtablajojos,listtablajojosByID, addtablajojos, updatetablajojos, deletetablajojos}=require('../controllers/tablajojos');
+
+
+const router =Router();
+
+//http://localhost:3000/api/v1/tablajojos/
+//http://localhost:3000/api/v1/tablajojos/1
+//http://localhost:3000/api/v1/tablajojos/3
+router.get('/', listtablajojos);
+router.get('/:id', listtablajojosByID);
+router.put('/', addtablajojos);
+router.patch('/:id', updatetablajojos);
+router.delete('/:id', deletetablajojos);
+module.exports =router;
